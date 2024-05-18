@@ -47,7 +47,7 @@ const consultaEstudianteRut = async () => {
 
 
 
-//consultaEstudianteRut()
+consultaEstudianteRut()
 //mostrarEstudiantes()
 
 //agregarEstudiante()

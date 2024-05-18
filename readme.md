@@ -1,17 +1,17 @@
 # Titulo del proyecto
 
-Breve descripción del proyecto y su objetivo.
+Desafio Evaluado Always 1
 
 ## Descripción del proyecto
 
-¿Estás comenzando un proyecto pequeño, un desafío de programación o un tutorial, y necesitas una forma rápida y sencilla de crear documentación básica? ¡Esta plantilla README minimalista es para ti!
+La empresa Always DB implementa el registro y consulta de sus estudiantes con un programa que por la terminal agregue los datos de los estudiantes y los guarde en una BBDD.
 
 ## Capturas de Pantalla del Proyecto
 
 Incluir capturas de pantalla o imágenes que muestren el proyecto en funcionamiento.
 
-![Home](imagenes/home.png)
-Vista inicio de la aplicación.
+![consultarut](assets/images/consultarut.png)
+Vista de estudiante constultado por rut.
 
 ## Prerrequisitos o Dependencias
 
