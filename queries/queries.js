@@ -13,7 +13,7 @@ const agregarEstudiante = async () => {
     const text =
       "INSERT INTO estudiantes(nombre, rut, curso, nivel) values($1, $2, $3, $4) returning *";
     const values = [nombre, rut, curso, nivel];
-    const respuesta = await pool.query(text, values);
+    await pool.query(text, values);
     console.log(`El estudiante ${nombre} fue agregado correctamente`);
   } catch (error) {
     console.log(error.message);
@@ -37,17 +37,50 @@ const consultaEstudianteRut = async () => {
   try {
     const consulta = "select * from estudiantes where rut = $1";
     const values = [rut];
-    const {rows} = await pool.query(consulta, values);
-    
-    console.log(rows)
+    const { rows } = await pool.query(consulta, values);
+
+    console.log(rows);
   } catch (error) {
     console.log(error.message);
   }
 };
 
+const editarEstudiante = async () => {
+  try {
+    const text =
+      "UPDATE estudiantes set nombre = $1, curso = $2, nivel = $3 WHERE rut = $4 RETURNING *";
+    const values = [nombre, curso, nivel, rut];
+    const response = await pool.query(text, values);
+    console.log(`El estudiante ${nombre} fue editado con exito`);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+const eliminarEstudiante = async () => {
+  try {
+    const text = "delete from estudiantes where rut = $1";
+    const values = [rut];
+    const response = await pool.query(text, values);
+    console.log(
+      `Registro de estudiante con RUT ${rut} eliminado correctamente`
+    );
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
-consultaEstudianteRut()
-//mostrarEstudiantes()
-
-//agregarEstudiante()
+if (opcion === "agregar") {
+  agregarEstudiante();
+} else if (opcion === "mostrar") {
+  mostrarEstudiantes();
+} else if (opcion === "consultaRut") {
+  consultaEstudianteRut();
+} else if (opcion === "editar") {
+  editarEstudiante();
+} else if (opcion === "eliminar") {
+    rut = argumento[1]
+  eliminarEstudiante();
+} else {
+  console.log("selecciona una opcion valida");
+}
