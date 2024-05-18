@@ -76,6 +76,7 @@ if (opcion === "agregar") {
   mostrarEstudiantes();
 } else if (opcion === "consultaRut") {
   consultaEstudianteRut();
+  rut = argumento[1]
 } else if (opcion === "editar") {
   editarEstudiante();
 } else if (opcion === "eliminar") {
